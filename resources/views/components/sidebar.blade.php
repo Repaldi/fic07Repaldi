@@ -8,7 +8,10 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="nav-item dropdown {{ $type_menu === 'dashboard' ? 'active' : '' }}">
+            <li class="{{ Request::is('home') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
+            </li>
+            {{-- <li class="nav-item dropdown {{ $type_menu === 'dashboard' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                     <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
@@ -18,28 +21,28 @@
                         <a class="nav-link" href="{{ url('dashboard-ecommerce-dashboard') }}">Ecommerce Dashboard</a>
                     </li>
                 </ul>
-            </li>
-            <li class="menu-header">Starter</li>
-            <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
+            </li> --}}
+            <li class="menu-header">Setting</li>
+            <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Layout</span></a>
+                    <span>Manajement User</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('layout-default-layout') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('layout-default-layout') }}">Default Layout</a>
+                    <li class="">
+                        <a class="nav-link" href="{{ route('user.index') }}">Data Users</a>
                     </li>
-                    <li class="{{ Request::is('transparent-sidebar') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('transparent-sidebar') }}">Transparent Sidebar</a>
+                    <li class="">
+                        <a class="nav-link" href="#">Data Roles</a>
                     </li>
-                    <li class="{{ Request::is('layout-top-navigation') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('layout-top-navigation') }}">Top Navigation</a>
+                    <li class="">
+                        <a class="nav-link" href="#">Data Permissions</a>
                     </li>
                 </ul>
             </li>
-            <li class="{{ Request::is('blank-page') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('blank-page') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('blank-page') }}"><i class="far fa-square"></i> <span>Blank
                         Page</span></a>
-            </li>
-            <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
+            </li> --}}
+            {{-- <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('bootstrap-alert') ? 'active' : '' }}">
@@ -165,7 +168,7 @@
                         <a class="nav-link" href="{{ url('forms-validation') }}">Validation</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             {{-- <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google
@@ -181,7 +184,7 @@
                     <li><a href="gmaps-simple.html">Simple</a></li>
                 </ul>
             </li> --}}
-            <li class="nav-item dropdown {{ $type_menu === 'modules' ? 'active' : '' }}">
+            {{-- <li class="nav-item dropdown {{ $type_menu === 'modules' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('modules-calendar') ? 'active' : '' }}">
@@ -307,7 +310,7 @@
                 <a class="nav-link" href="{{ url('credits') }}"><i class="fas fa-pencil-ruler">
                     </i> <span>Credits</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
 
         <div class="hide-sidebar-mini mt-4 mb-4 p-3">
